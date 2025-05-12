@@ -1,0 +1,123 @@
+UserAggregationFields:
+  type: object
+  properties:
+    id:
+      type: boolean
+    email:
+      type: boolean
+    name:
+      type: boolean
+    posts:
+      type: boolean
+  description: Aggregation fields for User
+UserAggregateArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/UserWhereInput'
+      description: Filter for aggregation
+    orderBy:
+      oneOf:
+        - $ref: '#/definitions/test/UserOrderByWithRelationInput'
+        - type: array
+          items:
+            $ref: '#/definitions/test/UserOrderByWithRelationInput'
+    cursor:
+      $ref: '#/definitions/test/UserWhereUniqueInput'
+    take:
+      type: integer
+    skip:
+      type: integer
+    _count:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Count aggregation
+    _sum:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Sum aggregation
+    _avg:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Average aggregation
+    _min:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Minimum aggregation
+    _max:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Maximum aggregation
+  description: Aggregate User args
+UserAggregateOutput:
+  type: object
+  properties:
+    _count:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: integer
+        name:
+          type: integer
+        posts:
+          type: integer
+        _all:
+          type: integer
+    _sum:
+      type: object
+      properties:
+        id:
+          type: number
+          nullable: true
+        email:
+          type: number
+          nullable: true
+        name:
+          type: number
+          nullable: true
+        posts:
+          type: number
+          nullable: true
+    _avg:
+      type: object
+      properties:
+        id:
+          type: number
+          nullable: true
+        email:
+          type: number
+          nullable: true
+        name:
+          type: number
+          nullable: true
+        posts:
+          type: number
+          nullable: true
+    _min:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        posts:
+          type: string
+          nullable: true
+    _max:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        posts:
+          type: string
+          nullable: true
+  description: Aggregate result for User

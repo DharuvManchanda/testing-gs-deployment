@@ -1,0 +1,164 @@
+PostGroupByArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/PostWhereInput'
+      description: Filter for grouping
+    orderBy:
+      oneOf:
+        - $ref: '#/definitions/test/PostOrderByWithRelationInput'
+        - type: array
+          items:
+            $ref: '#/definitions/test/PostOrderByWithRelationInput'
+    by:
+      type: array
+      items:
+        $ref: '#/definitions/test/PostScalarFieldEnum'
+      description: Fields to group by
+    _count:
+      type: object
+      properties:
+        $ref: '#/definitions/test/PostAggregationFields'
+        _all:
+          type: boolean
+      description: Count aggregation
+    _sum:
+      $ref: '#/definitions/test/PostAggregationFields'
+      description: Sum aggregation
+    _avg:
+      $ref: '#/definitions/test/PostAggregationFields'
+      description: Average aggregation
+    _min:
+      $ref: '#/definitions/test/PostAggregationFields'
+      description: Minimum aggregation
+    _max:
+      $ref: '#/definitions/test/PostAggregationFields'
+      description: Maximum aggregation
+  required:
+    - by
+  description: Group by Post args
+PostGroupByOutput:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        nullable: true
+      title:
+        type: string
+        nullable: true
+      content:
+        type: string
+        nullable: true
+      published:
+        type: boolean
+        nullable: true
+      author:
+        type: string
+        nullable: true
+      authorId:
+        type: integer
+        nullable: true
+      _count:
+        type: object
+        properties:
+          id:
+            type: integer
+          title:
+            type: integer
+          content:
+            type: integer
+          published:
+            type: integer
+          author:
+            type: integer
+          authorId:
+            type: integer
+          _all:
+            type: integer
+      _sum:
+        type: object
+        properties:
+          id:
+            type: number
+            nullable: true
+          title:
+            type: number
+            nullable: true
+          content:
+            type: number
+            nullable: true
+          published:
+            type: number
+            nullable: true
+          author:
+            type: number
+            nullable: true
+          authorId:
+            type: number
+            nullable: true
+      _avg:
+        type: object
+        properties:
+          id:
+            type: number
+            nullable: true
+          title:
+            type: number
+            nullable: true
+          content:
+            type: number
+            nullable: true
+          published:
+            type: number
+            nullable: true
+          author:
+            type: number
+            nullable: true
+          authorId:
+            type: number
+            nullable: true
+      _min:
+        type: object
+        properties:
+          id:
+            type: integer
+            nullable: true
+          title:
+            type: string
+            nullable: true
+          content:
+            type: string
+            nullable: true
+          published:
+            type: boolean
+            nullable: true
+          author:
+            type: string
+            nullable: true
+          authorId:
+            type: integer
+            nullable: true
+      _max:
+        type: object
+        properties:
+          id:
+            type: integer
+            nullable: true
+          title:
+            type: string
+            nullable: true
+          content:
+            type: string
+            nullable: true
+          published:
+            type: boolean
+            nullable: true
+          author:
+            type: string
+            nullable: true
+          authorId:
+            type: integer
+            nullable: true
+  description: Grouped result for Post

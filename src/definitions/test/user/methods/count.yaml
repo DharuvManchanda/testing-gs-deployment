@@ -1,0 +1,26 @@
+UserCountArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/UserWhereInput'
+      description: Filter for count
+    orderBy:
+      oneOf:
+        - $ref: '#/definitions/test/UserOrderByWithRelationInput'
+        - type: array
+          items:
+            $ref: '#/definitions/test/UserOrderByWithRelationInput'
+    cursor:
+      $ref: '#/definitions/test/UserWhereUniqueInput'
+    take:
+      type: integer
+    skip:
+      type: integer
+    distinct:
+      type: array
+      items:
+        $ref: '#/definitions/test/UserScalarFieldEnum'
+  description: Count User args
+UserCountOutput:
+  type: integer
+  description: Count of User

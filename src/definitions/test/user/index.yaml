@@ -1,0 +1,28 @@
+User:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: id
+    email:
+      type: string
+      description: email
+    name:
+      type: string
+      nullable: true
+      description: name
+    posts:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/definitions/test/Post'
+          - type: object
+            properties:
+              id:
+                type: integer
+            description: Post Ref
+      description: Posts
+  required:
+    - id
+    - email
+  description: User

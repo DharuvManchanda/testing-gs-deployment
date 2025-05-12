@@ -1,0 +1,22 @@
+PostFindUniqueArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/PostWhereUniqueInput'
+      description: Unique identifiers
+    select:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to select
+    omit:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to omit
+    include:
+      $ref: '#/definitions/test/PostRelations'
+  required:
+    - where
+  description: Find unique Post
+PostFindUniqueOutput:
+  oneOf:
+    - $ref: '#/definitions/test/Post'
+    - type: 'null'
+  description: Post or null

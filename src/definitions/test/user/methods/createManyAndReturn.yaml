@@ -1,0 +1,27 @@
+UserCreateManyAndReturnArgs:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/definitions/test/UserCreateInput'
+          - $ref: '#/definitions/test/UserCreateInputUnchecked'
+    skipDuplicates:
+      type: boolean
+    select:
+      $ref: '#/definitions/test/UserSelectOmitFields'
+      description: Fields to select
+    omit:
+      $ref: '#/definitions/test/UserSelectOmitFields'
+      description: Fields to omit
+    include:
+      $ref: '#/definitions/test/UserRelations'
+  required:
+    - data
+  description: Create many and return User args
+UserCreateManyAndReturnOutput:
+  type: array
+  items:
+    $ref: '#/definitions/test/User'
+  description: Created User array

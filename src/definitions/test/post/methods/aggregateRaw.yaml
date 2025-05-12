@@ -1,0 +1,21 @@
+PostAggregateRawArgs:
+  type: object
+  properties:
+    query:
+      type: string
+      description: Raw SQL query string
+    parameters:
+      type: array
+      items:
+        oneOf:
+          - type: string
+          - type: number
+          - type: boolean
+          - type: 'null'
+      description: Parameters for the raw aggregation query
+  required:
+    - query
+  description: Aggregate raw Post args
+PostAggregateRawOutput:
+  type: object
+  description: Raw aggregation result for Post

@@ -1,0 +1,21 @@
+UserAggregateRawArgs:
+  type: object
+  properties:
+    query:
+      type: string
+      description: Raw SQL query string
+    parameters:
+      type: array
+      items:
+        oneOf:
+          - type: string
+          - type: number
+          - type: boolean
+          - type: 'null'
+      description: Parameters for the raw aggregation query
+  required:
+    - query
+  description: Aggregate raw User args
+UserAggregateRawOutput:
+  type: object
+  description: Raw aggregation result for User

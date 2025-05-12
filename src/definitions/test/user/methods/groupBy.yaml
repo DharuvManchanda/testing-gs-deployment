@@ -1,0 +1,130 @@
+UserGroupByArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/UserWhereInput'
+      description: Filter for grouping
+    orderBy:
+      oneOf:
+        - $ref: '#/definitions/test/UserOrderByWithRelationInput'
+        - type: array
+          items:
+            $ref: '#/definitions/test/UserOrderByWithRelationInput'
+    by:
+      type: array
+      items:
+        $ref: '#/definitions/test/UserScalarFieldEnum'
+      description: Fields to group by
+    _count:
+      type: object
+      properties:
+        $ref: '#/definitions/test/UserAggregationFields'
+        _all:
+          type: boolean
+      description: Count aggregation
+    _sum:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Sum aggregation
+    _avg:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Average aggregation
+    _min:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Minimum aggregation
+    _max:
+      $ref: '#/definitions/test/UserAggregationFields'
+      description: Maximum aggregation
+  required:
+    - by
+  description: Group by User args
+UserGroupByOutput:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+        nullable: true
+      email:
+        type: string
+        nullable: true
+      name:
+        type: string
+        nullable: true
+      posts:
+        type: string
+        nullable: true
+      _count:
+        type: object
+        properties:
+          id:
+            type: integer
+          email:
+            type: integer
+          name:
+            type: integer
+          posts:
+            type: integer
+          _all:
+            type: integer
+      _sum:
+        type: object
+        properties:
+          id:
+            type: number
+            nullable: true
+          email:
+            type: number
+            nullable: true
+          name:
+            type: number
+            nullable: true
+          posts:
+            type: number
+            nullable: true
+      _avg:
+        type: object
+        properties:
+          id:
+            type: number
+            nullable: true
+          email:
+            type: number
+            nullable: true
+          name:
+            type: number
+            nullable: true
+          posts:
+            type: number
+            nullable: true
+      _min:
+        type: object
+        properties:
+          id:
+            type: integer
+            nullable: true
+          email:
+            type: string
+            nullable: true
+          name:
+            type: string
+            nullable: true
+          posts:
+            type: string
+            nullable: true
+      _max:
+        type: object
+        properties:
+          id:
+            type: integer
+            nullable: true
+          email:
+            type: string
+            nullable: true
+          name:
+            type: string
+            nullable: true
+          posts:
+            type: string
+            nullable: true
+  description: Grouped result for User

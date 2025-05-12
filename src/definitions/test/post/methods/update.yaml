@@ -1,0 +1,163 @@
+PostUpdateFields:
+  type: object
+  properties:
+    id:
+      type: integer
+      nullable: true
+      description: id
+    title:
+      type: string
+      nullable: true
+      description: title
+    content:
+      type: string
+      nullable: true
+      description: content
+    published:
+      type: boolean
+      nullable: true
+      description: published
+    author:
+      type: string
+      nullable: true
+      description: author
+    authorId:
+      type: integer
+      nullable: true
+      description: authorId
+  description: Post update fields
+PostUpdateRelationFields:
+  type: object
+  properties:
+    author:
+      type: object
+      properties:
+        create:
+          $ref: '#/definitions/test/UserCreateInput'
+          description: Create User
+        connect:
+          type: object
+          properties:
+            id:
+              type: integer
+          description: Connect User
+        disconnect:
+          type: boolean
+          const: true
+          description: Disconnect User
+        update:
+          $ref: '#/definitions/test/UserUpdateInput'
+          description: Update User
+        upsert:
+          $ref: '#/definitions/test/UserUpsertInput'
+          description: Upsert User
+        delete:
+          type: boolean
+          const: true
+          description: Delete User
+      description: author
+  description: Relation fields
+PostUpdateInput:
+  type: object
+  properties:
+    id:
+      type: integer
+      nullable: true
+      description: id
+    title:
+      type: string
+      nullable: true
+      description: title
+    content:
+      type: string
+      nullable: true
+      description: content
+    published:
+      type: boolean
+      nullable: true
+      description: published
+    author:
+      type: object
+      properties:
+        create:
+          $ref: '#/definitions/test/UserCreateInput'
+          description: Create User
+        connect:
+          type: object
+          properties:
+            id:
+              type: integer
+          description: Connect User
+        disconnect:
+          type: boolean
+          const: true
+          description: Disconnect User
+        update:
+          $ref: '#/definitions/test/UserUpdateInput'
+          description: Update User
+        upsert:
+          $ref: '#/definitions/test/UserUpsertInput'
+          description: Upsert User
+        delete:
+          type: boolean
+          const: true
+          description: Delete User
+      description: author
+    authorId:
+      type: integer
+      nullable: true
+      description: authorId
+  description: Update Post
+PostUpdateInputUnchecked:
+  type: object
+  properties:
+    id:
+      type: integer
+      nullable: true
+      description: id
+    title:
+      type: string
+      nullable: true
+      description: title
+    content:
+      type: string
+      nullable: true
+      description: content
+    published:
+      type: boolean
+      nullable: true
+      description: published
+    author:
+      type: string
+      nullable: true
+      description: author
+    authorId:
+      type: integer
+      nullable: true
+      description: authorId
+  description: Update Post unchecked
+PostUpdateArgs:
+  type: object
+  properties:
+    data:
+      oneOf:
+        - $ref: '#/definitions/test/PostUpdateInput'
+        - $ref: '#/definitions/test/PostUpdateInputUnchecked'
+    where:
+      $ref: '#/definitions/test/PostWhereUniqueInput'
+      description: Unique identifiers
+    select:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to select
+    omit:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to omit
+    include:
+      $ref: '#/definitions/test/PostRelations'
+  required:
+    - data
+    - where
+  description: Update Post args
+PostUpdateOutput:
+  $ref: '#/definitions/test/Post'
+  description: Post

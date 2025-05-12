@@ -1,0 +1,7 @@
+log:
+  level: info
+  sync: false
+  timestamp: stdTimeFunctions.isoTime
+  redact: []
+  transport: null  # 👈 Prevents pino from using any transport (like pino-pretty)
+

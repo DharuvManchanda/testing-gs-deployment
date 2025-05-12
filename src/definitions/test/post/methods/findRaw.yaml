@@ -1,0 +1,23 @@
+PostFindRawArgs:
+  type: object
+  properties:
+    query:
+      type: string
+      description: Raw SQL query string
+    parameters:
+      type: array
+      items:
+        oneOf:
+          - type: string
+          - type: number
+          - type: boolean
+          - type: 'null'
+      description: Parameters for the raw query
+  required:
+    - query
+  description: Find raw Post args
+PostFindRawOutput:
+  type: array
+  items:
+    type: object
+  description: Raw query result for Post

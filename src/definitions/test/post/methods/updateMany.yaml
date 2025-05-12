@@ -1,0 +1,19 @@
+PostUpdateManyArgs:
+  type: object
+  properties:
+    data:
+      oneOf:
+        - $ref: '#/definitions/test/PostUpdateInput'
+        - $ref: '#/definitions/test/PostUpdateInputUnchecked'
+    where:
+      $ref: '#/definitions/test/PostWhereInput'
+      description: Filter for update
+  required:
+    - data
+  description: Update many Post args
+PostUpdateManyOutput:
+  type: object
+  properties:
+    count:
+      type: integer
+  description: Update many Post output

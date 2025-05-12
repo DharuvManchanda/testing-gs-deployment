@@ -1,0 +1,13 @@
+PostDeleteManyArgs:
+  type: object
+  properties:
+    where:
+      $ref: '#/definitions/test/PostWhereInput'
+      description: Filter for deletion
+  description: Delete many Post args
+PostDeleteManyOutput:
+  type: object
+  properties:
+    count:
+      type: integer
+  description: Delete many Post output

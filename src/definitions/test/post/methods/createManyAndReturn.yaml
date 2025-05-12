@@ -1,0 +1,27 @@
+PostCreateManyAndReturnArgs:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/definitions/test/PostCreateInput'
+          - $ref: '#/definitions/test/PostCreateInputUnchecked'
+    skipDuplicates:
+      type: boolean
+    select:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to select
+    omit:
+      $ref: '#/definitions/test/PostSelectOmitFields'
+      description: Fields to omit
+    include:
+      $ref: '#/definitions/test/PostRelations'
+  required:
+    - data
+  description: Create many and return Post args
+PostCreateManyAndReturnOutput:
+  type: array
+  items:
+    $ref: '#/definitions/test/Post'
+  description: Created Post array

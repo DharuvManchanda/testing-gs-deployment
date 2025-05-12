@@ -1,0 +1,34 @@
+Post:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: id
+    title:
+      type: string
+      description: title
+    content:
+      type: string
+      nullable: true
+      description: content
+    published:
+      type: boolean
+      description: published
+    author:
+      oneOf:
+        - $ref: '#/definitions/test/User'
+        - type: object
+          properties:
+            id:
+              type: integer
+          description: User ref
+      description: User
+    authorId:
+      type: integer
+      description: authorId
+  required:
+    - id
+    - title
+    - published
+    - authorId
+  description: Post

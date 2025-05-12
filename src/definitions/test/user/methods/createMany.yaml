@@ -1,0 +1,20 @@
+UserCreateManyArgs:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        oneOf:
+          - $ref: '#/definitions/test/UserCreateInput'
+          - $ref: '#/definitions/test/UserCreateInputUnchecked'
+    skipDuplicates:
+      type: boolean
+  required:
+    - data
+  description: Create many User args
+UserCreateManyOutput:
+  type: object
+  properties:
+    count:
+      type: integer
+  description: Create many User output
