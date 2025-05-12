@@ -39,7 +39,7 @@
 		"typescript": "^4.9.5"
 	},
 	"dependencies": {
-		"@godspeedsystems/core": "link:E:/gsapi-test/gs-node-service",
+		"@godspeedsystems/core": "^2.5.4",
 		"@godspeedsystems/plugins-axios-as-datasource": "^1.0.3",
 		"@godspeedsystems/plugins-express-as-http": "^1.0.17",
 		"@godspeedsystems/plugins-prisma-as-datastore": "^2.0.7",
