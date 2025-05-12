@@ -13,8 +13,9 @@
 		"build:win32": "swc src -d dist & copyfiles -a -u 1 \"./src/**/!(.ts)\" \"./dist/\"",
 		"build:darwin:linux": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
 		"build:default": "swc src -d dist && rsync -a --exclude '*.ts' ./src/ ./dist/ && rsync -a ./config/ ./dist/config && rsync -a ./src/mappings/ ./dist/mappings && rsync -a ./src/plugins/ ./dist/plugins",
-		
-		"preview": "node src/dist/index.js",
+		"preview": "run-script-os",
+		"preview:win32": "node dist\\index.js",
+		"preview:darwin:linux": "node dist/index.js",
 		"preview:default": "node dist/index.js",
 		"clean": "run-script-os",
 		"clean:win32": "rmdir /s /q dist",
